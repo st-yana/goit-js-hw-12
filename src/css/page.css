@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+.search-main {
+  padding: 36px 156px;
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2E2F42;
+}
+
+li {
+  list-style-type: none;
+}
+
+.search-form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.search-input {
+  font-family: "Montserrat", sans-serif;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  color: #2e2f42;
+  background: #fff;
+  outline: none;
+}
+
+.search-input:hover {
+  border: 1px solid #000;
+}
+
+.search-input:focus-visible {
+  border: 1px solid #4e75ff;
+}
+
+.search-input:disabled {
+  border: 1px solid #808080;
+  background: #fafafa;
+  color: #808080;
+}
+
+button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  background: #4e75ff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: none;
+}
+
+.search-button:disabled {
+  background: #cfcfcf;
+  color: #989898;
+}
+
+.search-button:active {
+  background: #6c8cff;
+}
+
+.search-result {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-result-item {
+  border: 1px solid #808080;
+  width: 360px;
+}
+
+.search-result-item-image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+
+.search-result-item-text {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4px 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+.value {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: #FF3D00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin-top: 32px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.search-loader-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.search-load-more {
+  margin-top: 32px;
+}
+
+.last-message {
+  margin-top: 32px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  text-align: left;
+
+}
