@@ -24,7 +24,7 @@ form.addEventListener('submit', async (event) => {
   currentPage = 1;
   searchResultContainer.innerHTML = '';
   lastMessageContainer.innerHTML = '';
-  loadAndRenderImages(input.value);
+  loadAndRenderImages(input.value.trim());
 });
 
 loadMoreButton.addEventListener('click', () => {
@@ -32,6 +32,13 @@ loadMoreButton.addEventListener('click', () => {
 });
 
 const loadAndRenderImages = async (searchInput, needToScrollWindow = false) => {
+  if (searchInput.length === 0) {
+    toggleButtonVisibility(loadMoreButton, false);
+    currentPage = 1;
+    renderToastOnSearchEmpty(searchResultContainer);
+    return;
+  }
+
   toggleButtonVisibility(loadMoreButton, false);
   renderLoader(searchLoaderContainer);
   submitButton.disabled = true;
@@ -48,7 +55,8 @@ const loadAndRenderImages = async (searchInput, needToScrollWindow = false) => {
     } else {
       renderGallery(searchResultContainer, response.data.hits);
       const showedItems = currentPage * perPage;
-      const isLastPage = response.data.totalHits - showedItems < 15;
+
+      const isLastPage = response.data.totalHits - showedItems < 0;
 
       if (!isLastPage) {
         toggleButtonVisibility(loadMoreButton, true);
